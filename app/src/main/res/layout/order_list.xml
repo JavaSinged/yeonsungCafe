@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="#ffffff"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:columnCount="4"
+            android:rowCount="5">
+
+            <me.grantland.widget.AutofitTextView
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:autoSizeMinTextSize="17sp"
+                android:text="픽업 요청 카페 : "
+                android:textSize="17sp" />
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/cafeName"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_columnSpan="3"
+                android:layout_gravity="right"
+                android:autoSizeMinTextSize="17sp"
+                android:gravity="right"
+                android:text="카페 이름"
+                android:textSize="17sp" />
+
+            <me.grantland.widget.AutofitTextView
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:autoSizeMinTextSize="17sp"
+                android:layout_columnSpan="1"
+                android:text="주문 일자 : "
+                android:textSize="17sp" />
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/orderTime"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_columnSpan="3"
+                android:layout_gravity="right"
+                android:autoSizeMinTextSize="17sp"
+                android:gravity="right"
+                android:text="2022년5월5일"
+                android:textSize="17sp" />
+
+            <me.grantland.widget.AutofitTextView
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:autoSizeMinTextSize="17sp"
+                android:text="픽업 예상 시간 : "
+                android:textSize="17sp" />
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/pickupTime"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_columnSpan="3"
+                android:layout_gravity="right"
+                android:autoSizeMinTextSize="17sp"
+                android:gravity="right"
+                android:text="00:00"
+                android:textSize="17sp" />
+
+            <me.grantland.widget.AutofitTextView
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_row="1"
+                android:autoSizeMinTextSize="17sp"
+                android:text="결제해야 할 금액 :"
+                android:textSize="17sp" />
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/totalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_columnSpan="3"
+                android:layout_gravity="right"
+                android:autoSizeMinTextSize="17sp"
+                android:gravity="right"
+                android:text="1,000원"
+                android:textSize="17sp" />
+
+            <me.grantland.widget.AutofitTextView
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_row="1"
+                android:autoSizeMinTextSize="17sp"
+                android:text="요청사항 :"
+                android:textSize="17sp" />
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/want"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_columnSpan="3"
+                android:layout_gravity="right"
+                android:autoSizeMinTextSize="17sp"
+                android:gravity="right"
+                android:text="없음"
+                android:textSize="17sp" />
+
+        </GridLayout>
+</androidx.cardview.widget.CardView>

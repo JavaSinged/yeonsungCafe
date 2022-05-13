@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="Login.RegisterActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@color/purple_500"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:layout_below="@+id/toolbar">
+
+        <TextView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="50dp"
+            android:textStyle="bold"
+            android:text="@string/app_name"
+            android:textSize="40sp"
+            app:drawableLeftCompat="@drawable/logo" />
+
+
+        <EditText
+            android:id="@+id/edit_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:singleLine="true"
+            android:hint="이름"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/edit_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_name"
+            android:layout_marginBottom="5dp"
+            android:inputType="number"
+            android:singleLine="true"
+            android:hint="학번"/>
+
+        <EditText
+            android:id="@+id/edit_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_num"
+            android:layout_marginBottom="5dp"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:hint="비밀번호"/>
+
+        <EditText
+
+            android:id="@+id/edit_pwdcheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_pwd"
+            android:layout_marginBottom="5dp"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:hint="비밀번호 확인"/>
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:backgroundTint="#E4447A"
+            android:text="완료"
+            android:textSize="20sp" />
+    </RelativeLayout>
+</RelativeLayout>

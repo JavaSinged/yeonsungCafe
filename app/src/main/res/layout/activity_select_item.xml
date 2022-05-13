@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@color/purple_500"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@id/toolbar"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <me.grantland.widget.AutofitTextView
+        android:id="@+id/coffee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_marginLeft="10dp"
+        android:text="아메리카노"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:autoSizeMinTextSize="20sp" />
+
+    <me.grantland.widget.AutofitTextView
+        android:id="@+id/coffeePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/coffee"
+        android:layout_marginLeft="10dp"
+        android:textSize="20sp"
+        android:autoSizeMinTextSize="18sp"
+        android:text="4000"
+        />
+
+
+    <Button
+        android:id="@+id/dialog_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="5dp"
+        android:text="추가하기" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/coffeePrice"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/hot"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:textColor="@android:color/holo_red_light"
+            android:background="@drawable/recyclerview_solid"
+            android:text="HOT" />
+
+        <RadioButton
+            android:id="@+id/ice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:textColor="@android:color/holo_blue_light"
+            android:background="@drawable/recyclerview_solid"
+            android:text="ICE" />
+    </RadioGroup>
+
+    <me.grantland.widget.AutofitTextView
+        android:id="@+id/optionTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:autoSizeMinTextSize="18sp"
+        android:layout_below="@+id/radioGroup"
+        android:text="옵션: " />
+
+
+
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_baseline_add_shopping_cart_24"
+        app:backgroundTint="@color/purple_500"
+        app:elevation="6dp"
+        app:fabSize="auto"
+        app:tint="@null"/>
+</RelativeLayout>

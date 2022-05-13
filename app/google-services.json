@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "516777927142",
+    "firebase_url": "https://yeonsungcafe-default-rtdb.firebaseio.com",
+    "project_id": "yeonsungcafe",
+    "storage_bucket": "yeonsungcafe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516777927142:android:17b1631f7228417a01b627",
+        "android_client_info": {
+          "package_name": "com.example.shinjiwoong.yeonsungcafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516777927142-oehk5qtfbbqkrdnjtqa9bdov3r3dnij6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPJve_jrDSinn8RTrXEMvAbqO8Wq-a0_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "516777927142-oehk5qtfbbqkrdnjtqa9bdov3r3dnij6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/purple_200">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        app:srcCompat="@drawable/logo" />
+
+    <me.grantland.widget.AutofitTextView
+        android:id="@+id/nav_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="학생이름"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:autoSizeMinTextSize="20sp" />
+
+    <me.grantland.widget.AutofitTextView
+        android:id="@+id/nav_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nav_name"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        android:text="학생학번"
+        android:textSize="22sp"
+        android:autoSizeMinTextSize="20sp" />
+
+
+
+</RelativeLayout>

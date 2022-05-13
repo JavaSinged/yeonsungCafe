@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "yeonsungcafe",
+  "private_key_id": "8695a6b734460e5912f515fb29716f7dc02457ac",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQD2b7x3VswqaDOi\nY0yoXJhhEMnS9REtv8uNVw57Y95RUYBSbORybwBVU/k+hDSjZXxeCbjOnFYfijb6\naqk8QHz/jqf0TFTYZQnthCN5v5oXyKDcqyhHMfEJDT1k0qVm60+cTk9ANAP4u6go\nTtFrlRjp3I6Nrep1mh+tfpbSlKYxSulQiZYITk7uAWRTkzPjiOYmiK/EHDtIWXJm\nRuls/aQ0dDxwsriSH9FIfgzXT987/qUAZwUITbBr22vJhfLlox258BaEyUWhb9yk\nGa2QkonQfheBufUtoMA/ivJqwYQp2z1tPlwdJZu4MR9jv/D7asixtEgVQXgFdep3\nJc9tZtI/AgMBAAECggEANmuhYnc7+edt85/bF1jvW4wSDbCJvSEcKde+Pnhk6W9G\nl60tW6nwmGdFZM1cNHMeXkPmWFYE3M0wa+du/Pu+vs65f0T1/Z1+bkGede3ecP8g\nqupvKB26vUV7t86esRYoy/stHCAAeoayUUhqjcfsqwRGRLpRyuugsDcCxnkGJF8Y\nLLnwR1GAFOBX8x1gsAsjxgWzmc2Q8J89uC/bPrE9kQ4xCXTA2RsdjHHnTJWa+Exx\nuY0af9E9psHD3n4jBBmcFU4A2aL/L1yYj439RUVSymN0WpB1QwbeQmn+8rnC2qcN\nA9u1iqt6i5wvsML4+2gXZBjmcnDmqUtIoBAkA0uKKQKBgQD7TdRwAnP63iuXb+U2\nWL6TddRaYvhmmPUvPPP7+AgNsdQ0LXNkNO4nXs0rA2oVkMdS2Ka1zKXIuN5zdZbj\nOcwXdP/f4ET/1Tj54oFL3l1lVS7obxP6QY16qvhnaBzfVRcUp8G7gG6stg1zlMs/\nyJti7D8BL7LZIJSgyH8mj8useQKBgQD7Cp8OI3e5cCbM0cFT4dbt8PfOEctUcEZs\nnb/vfX6QlpCJCvTs57uSMzcHcWiTw56EOSjyPGmJAvFR3RVN18kMEpzF5Gt+cILX\nrjCYnXB6bWtZUCxNcvwe/MfwWFdeiaTY5k3lQ6SGUy9ZZcjfdyh2vYUCoUE7EHdM\nZnDic9FWdwKBgQC54BVTS90xHwcrGa52Binfs/V/bVjBuj0P1Yu5QPnj9zY36a5B\n3gyQvkQOnpXmoZFsq6aTLW0qC+Mtjzotk2BrsTRZCO7AM5vS6EAuN6jo/JqXfSFP\npxDYPIFDKvTAE5Xgxzw6TYKO6JEGfnXfFagpAQiQ/hDRHJISYnn5sb46MQKBgDJ5\nkztrhDIDy7lY3083VFipH5oOV9yVaoOCQEot6Fm3/D2ht1c+zKb7py/W7JjxNxkM\nyR/TZ8DFl7HHCvaI0YKc52qen8Jfat9kxZ6Z4TiscW4WwaGc4fZ1CtpXWNHISR3X\nSIg1Too3hYiq/3V25urg9jJuK8htah8xZbcSZF/HAoGAcu+ANu0AkNdoKASBBGQN\nJ6NZXR4LIwm5BjP5OnGXG9M6EL2nn6ILj5rZ91ji3zQ2FPxTn1nlHb1mo9aFAznH\nRTqjBKuV8wt1hOFya9M8N8AnCoQXDNt1tvRXMnuKpM115ZZ7NJW0b1yj9zgURk+A\nT+vOpzMpNqoPSOgE1c4NRWs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-cbab1@yeonsungcafe.iam.gserviceaccount.com",
+  "client_id": "117418273651042685325",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-cbab1%40yeonsungcafe.iam.gserviceaccount.com"
+}

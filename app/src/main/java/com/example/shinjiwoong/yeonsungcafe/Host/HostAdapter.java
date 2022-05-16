@@ -210,7 +210,7 @@ public class HostAdapter extends RecyclerView.Adapter<HostAdapter.HostViewHorder
                                                                 context,
                                                                 userToken.get(i).getToken(),
                                                                 "주문 취소",
-                                                                "매장 사정의 의해 주문이 취소되었습니다."
+                                                                "매장 사정에 의해 주문이 취소되었습니다."
                                                         );
                                                     }
                                                 }

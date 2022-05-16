@@ -28,8 +28,7 @@
         android:layout_margin="40dp"
         android:text="START ORDER"
         android:textSize="20sp"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/magenta"
+        android:backgroundTint="#E4447A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         />

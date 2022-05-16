@@ -10,8 +10,6 @@
     <!-- Messages Preferences -->
     <string name="reply_title">알림 수신</string>
 
-    <string name="default_notification_channel_id">Channel ID</string>
-
     <string name="sync_header">Sync</string>
     <string name="sync_title">Sync email periodically</string>
 

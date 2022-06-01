@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,6 +50,11 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     @Override
     public void onBindViewHolder(@NonNull CartAdapter.CartViewHolder holder, int position) {
         ShoppingCartDB db = new ShoppingCartDB(context);
+
+        for (int i = 0; i < arrayList.size(); i++) {
+            itemPrice.add(Integer.parseInt(arrayList.get(position).getPrice()));
+        }
+
         String getId = arrayList.get(position).getId();
 
         Glide.with(holder.itemView)
@@ -56,17 +62,17 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
                 .into(holder.imageView);
         holder.menuName.setText(arrayList.get(position).getName());
 
-        holder.temp.setText("음료 온도: "+arrayList.get(position).getTemp().toUpperCase(Locale.ROOT));
+        holder.temp.setText("음료 온도: " + arrayList.get(position).getTemp().toUpperCase(Locale.ROOT));
 
-        if(arrayList.get(position).getOption().equals("옵션: ")){
+        if (arrayList.get(position).getOption().equals("옵션: ")) {
             holder.option.setVisibility(View.GONE);
-        }else{
+        } else {
             holder.option.setText(arrayList.get(position).getOption());
         }
 
 
         //포맷 실행
-        holder.price.setText(decimalFormat.format(Integer.parseInt(arrayList.get(position).getPrice()))+"원");
+        holder.price.setText(decimalFormat.format(Integer.parseInt(arrayList.get(position).getPrice())) + "원");
 
         holder.count.setCount(Integer.parseInt(arrayList.get(position).getCount()));
 
@@ -76,32 +82,30 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
                 int pos = holder.getAbsoluteAdapterPosition();
 
-//                Log.e("남은 아이템 개수 ", String.valueOf(arrayList.size()));
-//                Log.e("삭제된 아이템 가격 ", String.valueOf(itemPrice.get(pos)*holder.count.getCount()));
-//                Log.e("삭제된 아이템 count ", String.valueOf(holder.count.getCount()));
-
                 if (!arrayList.isEmpty()) {
                     //삭제를 해도 1개 이상의 arrayList 값이 남아있을 때
                     int count = holder.count.getCount();
-                    int total = ((ShoppingCart) ShoppingCart.context).total - itemPrice.get(pos)*count;
-                    ((ShoppingCart)ShoppingCart.context).total = total;
-                    ((ShoppingCart)ShoppingCart.context).tv_totalPrice.setText(decimalFormat.format(total)+"원");
+                    int total = ShoppingCart.total - itemPrice.get(pos) * count;
+
+                    ShoppingCart.total = total;
+                    ShoppingCart.tv_totalPrice.setText(decimalFormat.format(total) + "원");
+
 
                     //countFab 값 변경
-                    if(((ShoppingCart)ShoppingCart.context).cafeName.equals("그라찌에")) {
-                        ((Init_gemcafe) Init_gemcafe.context).counterFab.setCount(getItemCount()-1);
-                    }else{
-                        ((Init_planet37)Init_planet37.context).counterFab.setCount(getItemCount()-1);
+                    if (ShoppingCart.cafeName.equals("그라찌에")) {
+                        Init_gemcafe.counterFab.setCount(getItemCount() - 1);
+                    } else {
+                        Init_planet37.counterFab.setCount(getItemCount() - 1);
                     }
                 } else {
                     //arrayList가 모두 비어졌을 때
-                    ((ShoppingCart)ShoppingCart.context).tv_totalPrice.setText("0원");
-                    ((ShoppingCart)ShoppingCart.context).total = 0;
+                    ShoppingCart.tv_totalPrice.setText("0원");
+                    ShoppingCart.total = 0;
                     //countFab 값 변경
-                    if(((ShoppingCart)ShoppingCart.context).cafeName.equals("그라찌에")) {
-                        ((Init_gemcafe) Init_gemcafe.context).counterFab.setCount(0);
-                    }else{
-                        ((Init_planet37)Init_planet37.context).counterFab.setCount(0);
+                    if (ShoppingCart.cafeName.equals("그라찌에")) {
+                        Init_gemcafe.counterFab.setCount(0);
+                    } else {
+                        Init_planet37.counterFab.setCount(0);
                     }
                 }
 
@@ -115,18 +119,29 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         holder.count.addStepCallback(new OnStepCallback() {
             @Override
             public void onStep(int i, boolean b) {
+
+
                 //itemPrice 위치
                 int pos = holder.getAbsoluteAdapterPosition();
                 //전체 금액 - 아이템 price - 아이템 개수
-                ((ShoppingCart)ShoppingCart.context).total = b ? ((ShoppingCart) ShoppingCart.context).total //전체 금액
-                        + itemPrice.get(pos) : ((ShoppingCart) ShoppingCart.context).total - itemPrice.get(pos); //해당 아이템의 가격을 더한다.
 
-                //수량 변경
+                if (b && Integer.parseInt(arrayList.get(pos).getCount()) != i) {
+                    ShoppingCart.total += itemPrice.get(pos);
+                    arrayList.get(pos).setCount(i+"");
+                    //수량 변경
+
+                    //cart.tv_totalPrice 변경
+                } else if (!b && Integer.parseInt(arrayList.get(pos).getCount()) != i) {
+                    ShoppingCart.total -= itemPrice.get(pos);
+                    arrayList.get(pos).setCount(i+"");
+                    //수량 변경
+
+                    //cart.tv_totalPrice 변경
+                }
                 db.updateData(getId, String.valueOf(i));
-
-                //cart.tv_totalPrice 변경
-                ((ShoppingCart)ShoppingCart.context).tv_totalPrice.setText(decimalFormat.format(((ShoppingCart)ShoppingCart.context).total)+"원");
+                ShoppingCart.tv_totalPrice.setText(decimalFormat.format(ShoppingCart.total) + "원");
             }
+
         });
     }
 
@@ -136,13 +151,13 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     }
 
     //삭제
-    public void removeItem(int position){
+    public void removeItem(int position) {
         itemPrice.remove(position);
         arrayList.remove(position);
     }
 
     //추가
-    public void addItem(Cart item){
+    public void addItem(Cart item) {
         arrayList.add(item);
     }
 

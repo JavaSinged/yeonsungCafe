@@ -40,10 +40,10 @@
 
             <nl.dionsegijn.steppertouch.StepperTouch
                 android:id="@+id/stepperTouch"
-                android:layout_below="@+id/optionCart"
-                android:layout_width="80dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                app:stepperTextSize="6sp"/>
+                android:layout_below="@+id/optionCart"
+                app:stepperTextSize="10sp" />
 
             <me.grantland.widget.AutofitTextView
                 android:id="@+id/tempTv"

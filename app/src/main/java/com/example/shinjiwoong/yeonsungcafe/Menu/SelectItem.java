@@ -178,9 +178,11 @@ public class SelectItem extends AppCompatActivity {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
 
-                    optionTV.setText("옵션:");
+                    optionTV.setText("옵션: ");
                     for (String s : selectList)
-                        optionTV.append(s + " ");
+                        optionTV.append(s + ", ");
+
+                    optionTV.setText(optionTV.getText().toString().substring(0, optionTV.getText().length()-2));
 
                     if (select.equals("ice")) {
                         toss_price = Integer.parseInt(id_price) + Integer.parseInt(id_ice) + count * 500;

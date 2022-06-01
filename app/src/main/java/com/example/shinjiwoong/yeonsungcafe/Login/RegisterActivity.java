@@ -123,6 +123,7 @@ public class RegisterActivity extends AppCompatActivity {
                             dialog.changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
                             dialog.setTitleText(name + "님의<br>아이디 " + num + "이(가)<br>활성화 되었습니다.");
                             dialog.show();
+                            finish();
                         } else {
                             // If sign in fails, display a message to the user.
                             if (error.containsKey(task.getException().toString())) {

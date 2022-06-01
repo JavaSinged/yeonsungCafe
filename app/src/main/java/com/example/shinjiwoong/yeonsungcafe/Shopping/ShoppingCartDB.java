@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import com.example.shinjiwoong.yeonsungcafe.Cafe.Init_gemcafe;
 import com.example.shinjiwoong.yeonsungcafe.Cafe.Init_planet37;
-import com.google.android.material.snackbar.Snackbar;
 
 public class ShoppingCartDB extends SQLiteOpenHelper {
 
@@ -26,9 +25,6 @@ public class ShoppingCartDB extends SQLiteOpenHelper {
     public static final String COLUMN_COUNT = "count";
     public static final String COLUMN_IMAGE = "image";
     public static final String COLUMN_OPTIONS = "options";
-
-    final static Init_gemcafe gem = new Init_gemcafe();
-    final static Init_planet37 planCafe = new Init_planet37();
 
     public ShoppingCartDB(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -137,8 +133,8 @@ public class ShoppingCartDB extends SQLiteOpenHelper {
         if (result == -1) {
             Toast.makeText(context, "실패", Toast.LENGTH_SHORT).show();
         } else {
-            Log.e("수량이 변경됨, ", count);
-            //((ShoppingCart)ShoppingCart.context).tv_totalPrice.setText(((ShoppingCart)ShoppingCart.context).total);
+            Log.e("수량이 변경됨 ", count);
+//            ((ShoppingCart)ShoppingCart.context).tv_totalPrice.setText(((ShoppingCart)ShoppingCart.context).total);
         }
     }
 }

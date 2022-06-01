@@ -74,6 +74,8 @@ public class HostAdapter extends RecyclerView.Adapter<HostAdapter.HostViewHorder
 
         holder.want.setText(arrayList.get(position).getWant());
 
+        holder.want.setSelected(true);
+
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -300,6 +302,8 @@ public class HostAdapter extends RecyclerView.Adapter<HostAdapter.HostViewHorder
             this.want = itemView.findViewById(R.id.want);
             this.orderView = itemView.findViewById(R.id.gridLayout);
             this.cardView = itemView.findViewById(R.id.cardview_host);
+
+            this.want.setSelected(true);
         }
     }
 }

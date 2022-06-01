@@ -7,10 +7,11 @@
     tools:context=".Cafe.MainActivity">
 
     <ImageView
+        android:id="@+id/imageView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/init"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/init" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,12 +26,14 @@
         android:id="@+id/startBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
-        android:text="START ORDER"
-        android:textSize="20sp"
+        android:layout_margin="60dp"
+        android:layout_marginBottom="611dp"
         android:backgroundTint="#E4447A"
+        android:text="START ORDER"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

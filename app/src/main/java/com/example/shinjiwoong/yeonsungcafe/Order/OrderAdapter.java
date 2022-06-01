@@ -2,6 +2,7 @@ package com.example.shinjiwoong.yeonsungcafe.Order;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -74,7 +75,6 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         holder.totalPrice.setText(arrayList.get(position).getTotalPrice());
 
         holder.want.setText(arrayList.get(position).getWant());
-
 
         holder.orderView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -195,6 +195,11 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
             this.totalPrice = itemView.findViewById(R.id.totalPrice);
             this.want = itemView.findViewById(R.id.want);
             this.orderView = itemView.findViewById(R.id.gridLayout);
+
+            want.setSelected(true);
+            want.setSingleLine();
+            want.setMarqueeRepeatLimit(-1);
+            want.setEllipsize(TextUtils.TruncateAt.MARQUEE);
         }
     }
 }

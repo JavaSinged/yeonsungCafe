@@ -57,6 +57,9 @@ public class Init_gemcafe extends AppCompatActivity {
     public static CounterFab counterFab;
     public static Toolbar toolBar;
 
+    TextView name;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,9 +81,8 @@ public class Init_gemcafe extends AppCompatActivity {
         View header = navigationView.getHeaderView(0);
 
         ImageView logo = header.findViewById(R.id.imageView);
-        TextView name = header.findViewById(R.id.nav_name);
         TextView num = header.findViewById(R.id.nav_num);
-
+        name = header.findViewById(R.id.nav_name);
         navigationView.setCheckedItem(R.id.nav_home);
 
         navigationView.setNavigationItemSelectedListener(item -> {
@@ -163,6 +165,12 @@ public class Init_gemcafe extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home: { // 왼쪽 상단 버튼 눌렀을 때
                 mDrawerLayout.openDrawer(GravityCompat.START);
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                if (user != null) {
+                    // Name, email address, and profile photo Url
+                    name.setText(user.getDisplayName());
+                }
+
                 return true;
             }
         }
@@ -221,8 +229,8 @@ public class Init_gemcafe extends AppCompatActivity {
     void setCounterFab() {
         ShoppingCartDB db;
         db = new ShoppingCartDB(Init_gemcafe.this);
-        SQLiteDatabase sql = db.getReadableDatabase();
-        db.onUpgrade(sql, 1, 2); //퍼지면 써야함
+//        SQLiteDatabase sql = db.getReadableDatabase();
+//        db.onUpgrade(sql, 1, 2); //퍼지면 써야함
         Cursor cursor = db.readAllData();
         if (cursor.getCount() == 0) {
 

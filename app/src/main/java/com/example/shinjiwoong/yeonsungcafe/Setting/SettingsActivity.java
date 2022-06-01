@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.Spanned;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -24,8 +25,11 @@ import androidx.preference.SwitchPreference;
 
 import com.example.shinjiwoong.yeonsungcafe.Login.LoginActivity;
 import com.example.shinjiwoong.yeonsungcafe.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.aboutlibraries.LibsBuilder;
 
@@ -107,14 +111,11 @@ public class SettingsActivity extends AppCompatActivity implements PreferenceFra
                 name = user.getDisplayName();
             }
 
-            //알림설정
-            SwitchPreference alert = findPreference("message");
-            CheckBoxPreference sound = findPreference("soundAlert");
-            CheckBoxPreference vibAlert = findPreference("vibAlert");
-
             //이름 변경
             EditTextPreference signaturePreference = findPreference("signature");
             signaturePreference.setSummary(name);
+            signaturePreference.setPositiveButtonText("변경하기");
+
 
             signaturePreference.setOnBindEditTextListener(new EditTextPreference.OnBindEditTextListener() {
                 @Override
@@ -122,6 +123,32 @@ public class SettingsActivity extends AppCompatActivity implements PreferenceFra
                     editText.setFilters(new InputFilter[]{filterKor});
                 }
             });
+
+            signaturePreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+                @Override
+                public boolean onPreferenceChange(@NonNull Preference preference, Object newValue) {
+                    name = newValue.toString();
+                    signaturePreference.setSummary(name);
+
+                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                            .setDisplayName(name)
+                            .build();
+
+                    user.updateProfile(profileUpdates)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(getContext(), "이름이 변경되었습니다.", Toast.LENGTH_SHORT).show();
+
+                                    }
+                                }
+                            });
+
+                    return true;
+                }
+            });
+
 
             //로그 아웃
             Preference logout = findPreference("logout");
@@ -152,7 +179,6 @@ public class SettingsActivity extends AppCompatActivity implements PreferenceFra
                             .withAboutAppName(getString(R.string.app_name))
                             .withLibraries("a", "b")
                             .start(getActivity());
-                    Toast.makeText(getContext(), "라이센스 버튼 클릭됨", Toast.LENGTH_SHORT).show();
                     return false;
                 }
             });

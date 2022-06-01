@@ -29,10 +29,10 @@ public class ShoppingCart extends AppCompatActivity {
 
     public static Context context;
     TextView tv_name;
-    TextView tv_totalPrice;
+    public static TextView tv_totalPrice;
     Button pickupBtn;
-    String cafeName;
-    public int total = 0;
+    public static String cafeName;
+    public static int total;
 
     private RecyclerView recyclerView;
     private CartAdapter adapter;
@@ -50,6 +50,8 @@ public class ShoppingCart extends AppCompatActivity {
         context = this;
 
         preActivity = ShoppingCart.this;
+
+        total = 0;
 
         Toolbar toolBar = findViewById(R.id.toolbar);
         setSupportActionBar(toolBar);
@@ -70,12 +72,12 @@ public class ShoppingCart extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new CartAdapter(arrayList,ShoppingCart.this);
 
         //db 생성
         db = new ShoppingCartDB(ShoppingCart.this);
         storeDataInArray();
 
+        adapter = new CartAdapter(arrayList,ShoppingCart.this);
         recyclerView.setAdapter(adapter);
 
         //픽업 주문하기 버튼 리스너
@@ -111,12 +113,8 @@ public class ShoppingCart extends AppCompatActivity {
                         cursor.getString(6));
 
                 //데이터 등록
-                adapter.itemPrice.add(Integer.parseInt(cursor.getString(3)));
-                adapter.addItem(cart);
+                arrayList.add(cart);
                 count+=1;
-
-                //적용
-                adapter.notifyItemInserted(count);
 
                 //장바구니에 total 초기화
                 total+= Integer.parseInt(cart.getPrice())*Integer.parseInt(cart.getCount());

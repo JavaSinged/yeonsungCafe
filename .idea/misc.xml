@@ -24,7 +24,7 @@
         <entry key="app/src/main/res/layout/activity_listview_cafe.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_login_check.xml" value="0.23645833333333333" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.11594202898550725" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_order_dialog.xml" value="0.33559782608695654" />
         <entry key="app/src/main/res/layout/activity_osslicenses.xml" value="0.42844202898550726" />
         <entry key="app/src/main/res/layout/activity_pickup.xml" value="0.5" />
@@ -36,12 +36,12 @@
         <entry key="app/src/main/res/layout/cafe_menu.xml" value="0.25" />
         <entry key="app/src/main/res/layout/cart_list.xml" value="0.5" />
         <entry key="app/src/main/res/layout/drawer_navigation.xml" value="0.37552083333333336" />
-        <entry key="app/src/main/res/layout/host_check_list.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/host_check_list.xml" value="0.25" />
         <entry key="app/src/main/res/layout/navigation_item.xml" value="0.37552083333333336" />
         <entry key="app/src/main/res/layout/option_list.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/layout/order_dialog.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/order_dialog_view.xml" value="0.33559782608695654" />
-        <entry key="app/src/main/res/layout/order_list.xml" value="0.33559782608695654" />
+        <entry key="app/src/main/res/layout/order_list.xml" value="0.25" />
         <entry key="app/src/main/res/layout/pickup_list.xml" value="0.14444444444444443" />
         <entry key="app/src/main/res/layout/settings_activity.xml" value="0.1" />
         <entry key="app/src/main/res/menu/init_menu.xml" value="0.2601851851851852" />

@@ -54,6 +54,7 @@ public class MainActivity extends Activity {
         StartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                load();
                 if (id.equals("") || psd.equals("")) {
                     Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(intent);

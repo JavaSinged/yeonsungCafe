@@ -61,9 +61,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_num"
             android:layout_marginBottom="5dp"
+            android:hint="비밀번호 (6글자 이상)"
             android:inputType="textPassword"
-            android:singleLine="true"
-            android:hint="비밀번호"/>
+            android:singleLine="true" />
 
         <EditText
 
@@ -74,7 +74,7 @@
             android:layout_marginBottom="5dp"
             android:inputType="textPassword"
             android:singleLine="true"
-            android:hint="비밀번호 확인"/>
+            android:hint="비밀번호 확인 (6글자 이상)"/>
 
         <Button
             android:id="@+id/btn_ok"
